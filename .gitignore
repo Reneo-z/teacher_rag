@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+vector_db/
+chroma/
+faiss_index/
+data/raw/
+*.log
+logs/
+.vscode/
+.idea/
