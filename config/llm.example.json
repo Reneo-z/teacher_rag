@@ -1,0 +1,8 @@
+{
+  "enabled": false,
+  "base_url": "https://api.openai.com/v1",
+  "model": "gpt-4o-mini",
+  "api_key": "<put-your-api-key-in-config/llm.local.json>",
+  "timeout_seconds": 60,
+  "temperature": 0.2
+}

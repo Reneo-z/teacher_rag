@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>教程问答助手 Demo</title>
+    <link rel="stylesheet" href="/styles.css?v=20260521-final" />
+  </head>
+  <body>
+    <main class="demo-shell" aria-label="宿主系统页面示例">
+      <aside class="demo-sidebar">
+        <div class="brand">知航<span>管理后台</span></div>
+        <nav class="demo-nav" aria-label="示例导航">
+          <a href="#"><span class="nav-icon grid-icon"></span>项目大屏</a>
+          <a href="#"><span class="nav-icon check-icon"></span>任务</a>
+          <a class="active" href="#"><span class="nav-icon folder-icon"></span>项目</a>
+          <a href="#"><span class="nav-icon flag-icon"></span>里程碑</a>
+          <a href="#"><span class="nav-icon flow-icon"></span>流程模板</a>
+          <a href="#"><span class="nav-icon team-icon"></span>团队管理</a>
+        </nav>
+        <div class="demo-user">
+          <span class="avatar"></span>
+          <div>
+            <strong>任泽波 (@Reneozzz)</strong>
+            <span>成员</span>
+          </div>
+        </div>
+      </aside>
+
+      <section class="demo-content">
+        <header class="demo-header">
+          <div>
+            <h1>项目列表</h1>
+            <p>查看所有项目</p>
+          </div>
+        </header>
+        <section class="workspace">
+          <div class="section-title">
+            <h2>项目管理</h2>
+            <p>查看和管理所有项目及成员</p>
+          </div>
+          <div class="team-line">团队 <span>(2)</span></div>
+          <div class="project-grid">
+            <article class="project-tile">
+              <span class="tile-icon folder-icon"></span>
+              <h3>htyy智能化项目</h3>
+              <p>htyy智能化项目</p>
+              <div class="tile-meta">
+                <span>2 名成员</span>
+                <span>100 价值点</span>
+              </div>
+            </article>
+            <article class="project-tile">
+              <span class="tile-icon folder-icon"></span>
+              <h3>MEMRL论文衍生实验</h3>
+              <p>基于 MEMRL 架构的衍生实验与机制探究</p>
+              <div class="tile-meta">
+                <span>3 名成员</span>
+                <span>1000 价值点</span>
+              </div>
+            </article>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <section class="assistant-widget" aria-live="polite">
+      <button class="assistant-fab" type="button" aria-label="打开教程助手" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M9 4.5h6M12 2v2.5M7.5 10.5h9M8.5 14h.01M15.5 14h.01" />
+          <rect x="5" y="6.5" width="14" height="12" rx="3" />
+          <path d="M3.5 11.5v3M20.5 11.5v3M9 18.5v2M15 18.5v2" />
+        </svg>
+      </button>
+
+      <section class="assistant-panel" aria-label="教程问答助手" hidden>
+        <header class="assistant-header">
+          <div class="assistant-title">
+            <span class="assistant-mark">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9 4.5h6M12 2v2.5M7.5 10.5h9M8.5 14h.01M15.5 14h.01" />
+                <rect x="5" y="6.5" width="14" height="12" rx="3" />
+              </svg>
+            </span>
+            <div>
+              <strong>全局助手</strong>
+              <span id="assistantSubtitle">新对话</span>
+            </div>
+          </div>
+          <div class="header-actions">
+            <button class="icon-button" id="newChatButton" type="button" aria-label="新建对话">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+            </button>
+            <button class="icon-button" id="minimizeButton" type="button" aria-label="最小化">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+            </button>
+            <button class="icon-button" id="closeButton" type="button" aria-label="关闭">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+            </button>
+          </div>
+        </header>
+
+        <div class="message-list" id="messageList">
+          <div class="empty-state" id="emptyState">
+            <span class="empty-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9 4.5h6M12 2v2.5M7.5 10.5h9M8.5 14h.01M15.5 14h.01" />
+                <rect x="5" y="6.5" width="14" height="12" rx="3" />
+              </svg>
+            </span>
+            <h2>你好，有什么可以帮你？</h2>
+            <p>请直接描述你所在模块和想完成的操作</p>
+            <div class="prompt-row">
+              <button type="button">任务管理模块中如何指派执行人？</button>
+              <button type="button">用户问答流程是什么？</button>
+            </div>
+          </div>
+        </div>
+
+        <form class="chat-form" id="chatForm">
+          <label class="sr-only" for="chatInput">输入问题</label>
+          <textarea
+            id="chatInput"
+            rows="1"
+            placeholder="例如：任务管理模块中如何创建巡检任务？"
+          ></textarea>
+          <button class="send-button" type="submit" aria-label="发送">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M22 2L11 13" />
+              <path d="M22 2l-7 20-4-9-9-4 20-7z" />
+            </svg>
+          </button>
+        </form>
+      </section>
+    </section>
+
+    <script src="/app.js?v=20260521-final"></script>
+  </body>
+</html>

@@ -11,3 +11,17 @@ data/raw/
 logs/
 .vscode/
 .idea/
+
+# Local development context for agents
+project.md
+dev.md
+env.md
+context/
+devlogs/
+# Local LLM config with API keys
+config/llm.local.json
+config/*.local.json
+.env
+# Local RAGFlow config with API keys
+config/ragflow.local.json
+config/ragflow.*.local.json

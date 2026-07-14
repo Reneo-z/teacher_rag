@@ -1,0 +1,18 @@
+{
+  "enabled": true,
+  "base_url": "http://127.0.0.1:9380",
+  "api_key": "<put-your-ragflow-api-key-in-config/ragflow.local.json>",
+  "default_dataset_ids": ["<dataset_id>"],
+  "module_dataset_map": {
+    "任务管理": ["<dataset_id>"]
+  },
+  "retrieval": {
+    "page": 1,
+    "page_size": 5,
+    "similarity_threshold": 0.2,
+    "vector_similarity_weight": 0.3,
+    "top_k": 1024,
+    "keyword": true
+  },
+  "timeout_seconds": 60
+}
